@@ -3,11 +3,10 @@ from numpy import *
 
 def main():
    test1 = Fold([3,2,0], array([[0,0,0],[1,0,0],[0,1,0],[1,1,0]]), array([[2,0,0],[0,2,0],[0,0,1]]))
-   print test1
+   print(test1)
    
 
 def Fold(position,sites,e):
-   #print e
    vol = (dot(e[0],cross(e[1],e[2])))   # equivalent to determinant, but keep the number integers
    if vol < 0:
       vol *= -1
@@ -27,7 +26,7 @@ def Fold(position,sites,e):
       R2 = dot(e,R)//vol
       return R2,site
    else:
-      print 'Unable to fold the position',position, 'on the original cluster with this superlattice'
+      print('Unable to fold the position',position, 'on the original cluster with this superlattice')
       assert()
 
 
